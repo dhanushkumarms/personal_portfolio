@@ -1,85 +1,182 @@
-import { useState } from "react";
-import { cn } from "@/lib/util";
+import { motion } from "framer-motion";
+import './Technologies.css';
 
-const skills = [
-  // Frontend
-  { name: "HTML/CSS", level: 90, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
+import { TiHtml5 } from "react-icons/ti";
+import { RiReactjsLine } from "react-icons/ri";
+import { FaNodeJs, FaJava, FaPython, FaGitAlt, FaGithub } from "react-icons/fa";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { SiExpress, SiMysql, SiFigma } from "react-icons/si";
+import { IoLogoCss3 } from "react-icons/io";
+import { IoLogoJavascript } from "react-icons/io5";
+import { VscVscode } from "react-icons/vsc";
+import { TbCircleLetterCFilled } from "react-icons/tb";
 
-  // Backend
-  { name: "Node.js", level: 90, category: "backend" },
-  { name: "MongoDB", level: 90, category: "backend" },
-  { name: "Firebase", level: 95, category: "backend" },
-
-
-  // Tools
-  { name: "Git/GitHub", level: 95, category: "tools" },
-  { name: "TensorFlow", level: 75, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
-  { name: "Postman", level: 85, category: "tools" },
-  { name: "Selenium", level: 70, category: "tools" },
-];
-
-const categories = ["all", "frontend", "backend", "tools"];
+const iconVariants = (duration) => ({
+  initial: { y: -10 },
+  animate: {
+    y: [10, -10],
+    transition: {
+      duration: duration,
+      ease: "linear",
+      repeat: Infinity,
+      repeatType: "reverse",
+    },
+  },
+});
 
 export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
-
-  const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
-  );
   return (
-    <section id="skills" className="py-24 px-4 relative bg-secondary/30">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary"> Skills</span>
-        </h2>
+    <div className="border-b border-neutral-800 pb-24" id="skills">
+      <motion.h1
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -100 }}
+        transition={{ duration: 1.5 }}
+        className="my-20 text-center text-4xl"
+      >
+        Skills & Tools
+      </motion.h1>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category, key) => (
-            <button
-              key={key}
-              onClick={() => setActiveCategory(category)}
-              className={cn(
-                "px-5 py-2 rounded-full transition-colors duration-300 capitalize cursor-pointer",
-                activeCategory === category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-forefround hover:bd-secondary"
-              )}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+      <motion.div
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        transition={{ duration: 1.5 }}
+        className="flex flex-wrap items-center justify-center gap-4"
+      >
+        <motion.div
+          variants={iconVariants(2.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <FaJava className="text-7xl text-red-600" />
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSkills.map((skill, key) => (
-            <div
-              key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
-            >
-              <div className="text-left mb-4">
-                <h3 className="font-semibold text-lg"> {skill.name}</h3>
-              </div>
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                  style={{ width: skill.level + "%" }}
-                />
-              </div>
+        <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-3"
+        >
+          <FaPython className="text-7xl text-python-blue" />
+        </motion.div>
 
-              <div className="text-right mt-1">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level}%
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+        <motion.div
+          variants={iconVariants(2.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-3"
+        >
+          <TbCircleLetterCFilled className="text-7xl text-blue-800" />
+        </motion.div>
+
+        <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-3"
+        >
+          <TiHtml5 className="text-7xl text-orange-700" />
+        </motion.div>
+
+        <motion.div
+          variants={iconVariants(2.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-3"
+        >
+          <IoLogoCss3 className="text-7xl text-blue-700" />
+        </motion.div>
+
+        <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-3"
+        >
+          <RiReactjsLine className="text-7xl text-cyan-400" />
+        </motion.div>
+
+        <motion.div
+          variants={iconVariants(2.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-3"
+        >
+          <IoLogoJavascript className="text-7xl text-yellow-400" />
+        </motion.div>
+
+        <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-3"
+        >
+          <FaNodeJs className="text-7xl text-green-500" />
+        </motion.div>
+
+        <motion.div
+          variants={iconVariants(2.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-3"
+        >
+          <BiLogoPostgresql className="text-7xl text-sky-700" />
+        </motion.div>
+
+        <motion.div
+          variants={iconVariants(3.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-3"
+        >
+          <SiExpress className="text-7xl" />
+        </motion.div>
+
+        <motion.div
+          variants={iconVariants(2.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-3"
+        >
+          <SiMysql className="text-7xl" />
+        </motion.div>
+
+        <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-3"
+        >
+          <VscVscode className="text-7xl text-blue-800" />
+        </motion.div>
+
+        <motion.div
+          variants={iconVariants(2.5)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-3"
+        >
+          <FaGitAlt className="text-7xl text-red-800" />
+        </motion.div>
+
+        <motion.div
+          variants={iconVariants(3)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-3"
+        >
+          <FaGithub className="text-7xl text-black" />
+        </motion.div>
+
+        <motion.div
+          variants={iconVariants(2)}
+          initial="initial"
+          animate="animate"
+          className="rounded-2xl border-4 border-neutral-800 p-4"
+        >
+          <SiFigma className="text-6xl" />
+        </motion.div>
+      </motion.div>
+    </div>
   );
 };
