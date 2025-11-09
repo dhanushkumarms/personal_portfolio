@@ -25,10 +25,10 @@ const projects = [
     title: "SpotWise - Urban Service Matching System",
     description:
       "Location-based web platform that connects service seekers with local providers using real-time geolocation and secure notifications.",
-    image: "/projects/image4.png",
+    image: "/projects/services.png",
     tags: ["Node.js", "Express.js", "MongoDB", "Google Maps API"],
     demoUrl: "#",
-    githubUrl: "https://github.com/ITZsanthosh369/SPOTWISE.git",
+    githubUrl: "https://github.com/dhanushkumarms/SPOTWISE",
   },
   
 ];
