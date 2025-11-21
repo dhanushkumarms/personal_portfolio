@@ -27,7 +27,7 @@ A sleek and fully responsive developer portfolio built using React.js and Tailwi
 
 ## 🌐 Live Link
 
-[Dhanushkumar M](https://personal-portfolio-pink-five-71.vercel.app/)
+[Dhanushkumar M](https://dhanushkumarms.netlify.app/)
 
 ## 📝 License
 
