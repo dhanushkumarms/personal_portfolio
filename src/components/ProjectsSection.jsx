@@ -8,7 +8,7 @@ const projects = [
     image: "/projects/kaar_ai.png",
     tags: ["ASP.NET Core", "MySQL", "Azure", "ChatPDF API"],
     demoUrl: "#",
-    githubUrl: "https://github.com/ITZsanthosh369/KAARchive.git",
+    githubUrl: "https://github.com/dhanushkumarms/kaarchive.git",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const projects = [
     image: "/projects/campusconnect.png",
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.io"],
     demoUrl: "#",
-    githubUrl: "#https://github.com/ITZsanthosh369/Campus.git",
+    githubUrl: "https://github.com/dhanushkumarms/Campus-Connect.git",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const projects = [
     image: "/projects/services.png",
     tags: ["Node.js", "Express.js", "MongoDB", "Google Maps API"],
     demoUrl: "#",
-    githubUrl: "https://github.com/dhanushkumarms/SPOTWISE",
+    githubUrl: "https://github.com/dhanushkumarms/SPOTWISE,git",
   },
   
 ];
