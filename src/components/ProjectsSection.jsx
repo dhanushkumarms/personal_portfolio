@@ -28,7 +28,7 @@ const projects = [
     image: "/projects/services.png",
     tags: ["Node.js", "Express.js", "MongoDB", "Google Maps API"],
     demoUrl: "#",
-    githubUrl: "https://github.com/dhanushkumarms/SPOTWISE,git",
+    githubUrl: "https://github.com/dhanushkumarms/SPOTWISE.git",
   },
   
 ];
