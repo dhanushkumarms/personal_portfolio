@@ -2,8 +2,8 @@ name: Auto Commit to Keep Repo Active
 
 on:
   schedule:
-    - cron: "0 6 * * *"       # Runs daily at 6 AM IST
-  workflow_dispatch:           # Allow manual run
+    - cron: "0 6 * * *"
+  workflow_dispatch:
 
 jobs:
   auto-update:
@@ -13,17 +13,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Update portfolio activity file
+      - name: Update activity file
         run: |
           mkdir -p .activity
-          echo "Portfolio updated on $(date '+%Y-%m-%d %H:%M:%S')" > .activity/daily-update.txt
+          echo "Updated at $(date '+%Y-%m-%d %H:%M:%S')" >> .activity/daily-update.txt
+          # Note: '>>' appends, so content always changes
 
       - name: Commit changes
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          git config user.name "dhanushkumarms"
+          git config user.email "dhanushkumarms12@gmail.com"
           git add .
-          git commit -m "Automated portfolio update: $(date '+%Y-%m-%d')" || echo "No changes to commit"
+          git commit -m "Daily automated update: $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes"
 
       - name: Push changes
         run: git push
